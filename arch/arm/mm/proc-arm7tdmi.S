@@ -104,7 +104,7 @@ __\name\()_proc_info:
 			cpu_arm7tdmi_name
 		arm7tdmi_proc_info triscenda7, 0x0001d2ff, 0x0001ffff, \
 			cpu_triscenda7_name, extra_hwcaps=HWCAP_THUMB
-		arm7tdmi_proc_info at91, 0x14000040, 0xfff000e0, \
+		arm7tdmi_proc_info at91, 0x41807000, 0xfff8f000, \
 			cpu_at91_name, extra_hwcaps=HWCAP_THUMB
 		arm7tdmi_proc_info s3c4510b, 0x36365000, 0xfffff000, \
 			cpu_s3c4510b_name, extra_hwcaps=HWCAP_THUMB

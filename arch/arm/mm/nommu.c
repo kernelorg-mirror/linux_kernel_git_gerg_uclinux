@@ -25,7 +25,9 @@ void __init arm_mm_memblock_reserve(void)
 	 * some architectures which the DRAM is the exception vector to trap,
 	 * alloc_page breaks with error, although it is not NULL, but "0."
 	 */
-	memblock_reserve(CONFIG_VECTORS_BASE, PAGE_SIZE);
+	if ((CONFIG_VECTORS_BASE >= CONFIG_DRAM_BASE) &&
+	    (CONFIG_VECTORS_BASE < CONFIG_DRAM_BASE + CONFIG_DRAM_SIZE))
+		memblock_reserve(CONFIG_VECTORS_BASE, PAGE_SIZE);
 }
 
 void __init sanity_check_meminfo(void)

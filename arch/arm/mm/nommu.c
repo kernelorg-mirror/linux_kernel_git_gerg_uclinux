@@ -43,6 +43,8 @@ void __init sanity_check_meminfo(void)
 void __init paging_init(struct machine_desc *mdesc)
 {
 	early_trap_init((void *)CONFIG_VECTORS_BASE);
+	if (mdesc->map_io)
+		mdesc->map_io();
 	bootmem_init();
 }
 
